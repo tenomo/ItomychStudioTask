@@ -1,0 +1,14 @@
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Tests.deps.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Tests.runtimeconfig.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Tests.runtimeconfig.dev.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Tests.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.csprojResolveAssemblyReference.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.csproj.CoreCompileInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.AssemblyInfoInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.AssemblyInfo.cs
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Tests.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll

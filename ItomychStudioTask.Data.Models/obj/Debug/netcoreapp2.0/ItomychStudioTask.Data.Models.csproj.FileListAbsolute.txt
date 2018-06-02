@@ -1,0 +1,9 @@
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.deps.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.csproj.CoreCompileInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.AssemblyInfoInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.AssemblyInfo.cs
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.Models\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.csprojResolveAssemblyReference.cache

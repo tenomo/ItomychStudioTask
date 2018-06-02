@@ -1,0 +1,6 @@
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.csproj.CoreCompileInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.AssemblyInfoInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.AssemblyInfo.cs
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.deps.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Data.SqlLite\obj\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.csprojResolveAssemblyReference.cache

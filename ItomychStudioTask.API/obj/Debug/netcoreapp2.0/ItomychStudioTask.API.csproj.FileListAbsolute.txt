@@ -1,0 +1,11 @@
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.deps.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.runtimeconfig.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.runtimeconfig.dev.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.csprojResolveAssemblyReference.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.csproj.CoreCompileInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.AssemblyInfoInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.AssemblyInfo.cs
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.pdb

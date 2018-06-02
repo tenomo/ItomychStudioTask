@@ -1,0 +1,9 @@
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.deps.json
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.csprojResolveAssemblyReference.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.csproj.CoreCompileInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.AssemblyInfoInputs.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.AssemblyInfo.cs
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
