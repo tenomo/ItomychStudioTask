@@ -12,22 +12,54 @@ namespace ItomychStudioTask.Tests.ServiceTests
     public class BookServiceTests
     {
         [Fact]
-        public void TestGetAll()
+        public void TestsGet()
         {
             #region mock
 
-            var categoriesList = new List<Book>();
+            var booksList = new List<Book>();
             int catsCount = 5;
             for (int i = 0; i < catsCount; i++)
             {
-                categoriesList.Add(new Book()
+                booksList.Add(new Book()
                 {
                     Id = i,
                     Title = Guid.NewGuid().ToString()
                 });
             }
             var mockBookRepository = new Mock<IBookRepository>();
-            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
+            mockBookRepository.Setup(repository => repository.Get(It.IsAny<long>())).ReturnsAsync((long id) =>
+                booksList.FirstOrDefault(book => book.Id == id));
+            var mockStorage = new Mock<IStorage>();
+            mockStorage.Setup(storage => storage.BookRepository)
+                .Returns(mockBookRepository.Object);
+            var bookService = new BookService(mockStorage.Object, null);
+
+            #endregion
+
+            for (int i = 0; i < catsCount; i++)
+            {
+                Assert.NotNull(bookService.Get(i));
+            }
+            
+        }
+
+        [Fact]
+        public void TestGetAll()
+        {
+            #region mock
+
+            var booksList = new List<Book>();
+            int catsCount = 5;
+            for (int i = 0; i < catsCount; i++)
+            {
+                booksList.Add(new Book()
+                {
+                    Id = i,
+                    Title = Guid.NewGuid().ToString()
+                });
+            }
+            var mockBookRepository = new Mock<IBookRepository>();
+            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(booksList);
             var mockStorage =
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
@@ -47,11 +79,11 @@ namespace ItomychStudioTask.Tests.ServiceTests
 
             #region mock
 
-            var categoriesList = new List<Book>();
+            var booksList = new List<Book>();
 
             for (int i = 0; i < catsCount; i++)
             {
-                categoriesList.Add(new Book()
+                booksList.Add(new Book()
                 {
                     Id = i,
                     Title = Guid.NewGuid().ToString()
@@ -59,7 +91,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
             }
             var mockBookRepository = new Mock<IBookRepository>();
             mockBookRepository.Setup(repository => repository.GetAll(It.IsAny<int>(), It.IsAny<int>()))
-                .ReturnsAsync((int page, int rows) => categoriesList.Skip(page * rows).Take(rows));
+                .ReturnsAsync((int page, int rows) => booksList.Skip(page * rows).Take(rows));
             var mockStorage =
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
@@ -82,11 +114,11 @@ namespace ItomychStudioTask.Tests.ServiceTests
         {
             #region mock
 
-            var categoriesList = new List<Book>();
+            var booksList = new List<Book>();
             var mockBookRepository = new Mock<IBookRepository>();
-            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
+            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(booksList);
             mockBookRepository.Setup(repository => repository.Create(It.IsAny<Book>()))
-                .Callback((Book book) => categoriesList.Add(book));
+                .Callback((Book book) => booksList.Add(book));
             var mockStorage =
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
@@ -105,13 +137,13 @@ namespace ItomychStudioTask.Tests.ServiceTests
         {
             #region mock
 
-            var categoriesList = new List<Book>();
+            var booksList = new List<Book>();
             var targetBook = new Book();
-            categoriesList.Add(targetBook);
+            booksList.Add(targetBook);
             var mockBookRepository = new Mock<IBookRepository>();
-            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
+            mockBookRepository.Setup(repository => repository.GetAll()).ReturnsAsync(booksList);
             mockBookRepository.Setup(repository => repository.Delete(It.IsAny<long>()))
-                .Callback((long bookId) => categoriesList.RemoveAt((int) bookId));
+                .Callback((long bookId) => booksList.RemoveAt((int) bookId));
             var mockStorage =
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)

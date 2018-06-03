@@ -18,3 +18,7 @@ D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.pdb
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.API.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.pdb
