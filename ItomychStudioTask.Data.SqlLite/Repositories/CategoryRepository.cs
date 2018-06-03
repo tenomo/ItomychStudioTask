@@ -10,29 +10,29 @@ namespace ItomychStudioTask.Data.SqlLite.Repositories
 {
    public class CategoryRepository : ICategoryRepository
     {
-        private StorageContext storageContext;
-        private DbSet<Category> categorySet;
+        private readonly StorageContext _storageContext;
+        private readonly DbSet<Category> _categorySet;
 
         public CategoryRepository(IStorageContext storageContext)
         {
-            this.storageContext = storageContext as StorageContext;
-            this.categorySet = this.storageContext.Set<Category>();
+            this._storageContext = storageContext as StorageContext;
+            this._categorySet = this._storageContext.Set<Category>();
         }
 
         public async Task<IEnumerable<Category>> GetAll(int page, int rows)
         {
-           return  await  categorySet.Skip(page*rows).Take(rows).ToListAsync();
+           return  await  _categorySet.Skip(page*rows).Take(rows).ToListAsync();
         }
 
         public async Task<IEnumerable<Category>> GetAll()
         {
-            return await categorySet.ToListAsync();
+            return await _categorySet.ToListAsync();
         }
 
         public async Task<Category> Get(long id)
         {
 
-            return await categorySet.FirstOrDefaultAsync(category => category.Id == id );
+            return await _categorySet.FirstOrDefaultAsync(category => category.Id == id );
         }
     }
 }

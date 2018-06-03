@@ -12,3 +12,9 @@ D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\obj\Debug\netcoreapp2.0\ItomychStudioTask.Tests.csprojResolveAssemblyReference.cache
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Tests\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb

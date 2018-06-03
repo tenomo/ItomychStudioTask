@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using AutoMapper;
 using ItomychStudioTask.API.Attributes;
 using ItomychStudioTask.API.Models;
 using ItomychStudioTask.Business.Services.Books;
@@ -13,10 +13,12 @@ namespace ItomychStudioTask.API.Controllers
     public class BooksController : Controller
     {
         private readonly IBookService _bookService;
+        private readonly IMapper  _mapper;
 
-        public BooksController(IBookService bookService)
+        public BooksController(IBookService bookService, IMapper mapper)
         {
             _bookService = bookService;
+            _mapper = mapper;
         }
 
         // GET: api/Books
@@ -45,30 +47,32 @@ namespace ItomychStudioTask.API.Controllers
         
         // POST: api/Books
         [HttpPost]
-        [ValidateModel]
-        public async Task<IActionResult> Post([FromBody] Book book)
-        //public async Task<IActionResult> Post([FromBody] BookCreateModel book)
+       [ValidateModel]
+         
+       public async Task<IActionResult> Post(  BookCreateModel book)
         { 
-            if (!_bookService.BookValidationService.IsBookBelongsToCategory(book))
-                return BadRequest($"Can not save book. Category by id {book.CategoryId} was not found.");
 
-            await _bookService.Create(book);
+            var bookEntity = _mapper.Map<Book>(book);
+            if (!_bookService.BookValidationService.IsBookBelongsToCategory(bookEntity))
+                return BadRequest($"Can not save book. Category by id {book.CategoryId} was not found.");
+            await _bookService.Create(bookEntity);
             return Ok();
         }
 
         // PUT: api/Books/5
-        [HttpPut("{id}")]
+        [HttpPut]
         [ValidateModel]
-        public async Task<IActionResult> Put([FromBody]BookEditModel book)
+        public async Task<IActionResult> Put( BookEditModel book)
         {
+            var bookEntity = _mapper.Map<Book>(book);
 
-            if (!_bookService.BookValidationService.IsBookExists(book))
+            if (!_bookService.BookValidationService.IsBookExists(bookEntity))
                 return NotFound("The book by id {book.Id} was not found.");
 
-            if (!_bookService.BookValidationService.IsBookBelongsToCategory(book))
+            if (!_bookService.BookValidationService.IsBookBelongsToCategory(bookEntity))
                 return BadRequest($"Can not save. Category by id {book.Id} was not found.");
 
-            await _bookService.Update(book);
+            await _bookService.Update(bookEntity);
             return Ok();
         }
         

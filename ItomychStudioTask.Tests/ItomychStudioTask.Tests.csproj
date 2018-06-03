@@ -5,10 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ServiceTests\CetegoryServiceTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.8.2" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.analyzers" Version="0.9.0" />
     <PackageReference Include="xunit.runner.console" Version="2.4.0-beta.2.build4010" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ControllerTests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ServiceTests\CetegoryServiceTests.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ItomychStudioTask.Business.Services\ItomychStudioTask.Business.Services.csproj" />
+    <ProjectReference Include="..\ItomychStudioTask.Data.Abstractions\ItomychStudioTask.Data.Abstractions.csproj" />
+    <ProjectReference Include="..\ItomychStudioTask.Data.Models\ItomychStudioTask.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

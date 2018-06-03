@@ -1,5 +1,4 @@
-﻿ using ItomychStudioTask.Data.Abstractions;
-using ItomychStudioTask.Data.Abstractions.ModelAbstractions;
+﻿using ItomychStudioTask.Data.Abstractions.ModelAbstractions;
 
 namespace ItomychStudioTask.Data.SqlLite
 {

@@ -13,9 +13,9 @@ namespace ItomychStudioTask.Business.Services.Books
             _storage = storage;
         }
 
-        public bool IsBookExists(Book book)
+        public   bool IsBookExists(Book book)
         {
-            return (_storage.BookRepository.GetAll().Result).Contains(book);
+            return (_storage.BookRepository.GetAll().Result).Any(eachBook => eachBook.Id == book.Id);
 
         }
 

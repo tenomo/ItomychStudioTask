@@ -1,4 +1,5 @@
-﻿using ItomychStudioTask.Business.Services.Books;
+﻿using AutoMapper;
+using ItomychStudioTask.Business.Services.Books;
 using ItomychStudioTask.Business.Services.Categories;
 using ItomychStudioTask.Data.Abstractions;
 using ItomychStudioTask.Data.Abstractions.ModelAbstractions;
@@ -25,7 +26,7 @@ namespace ItomychStudioTask.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            //services.AddDbContext<IStorageContext, StorageContext>(  (provider, builder) => provider);
+            services.AddCors();
             services.AddDbContext<IStorageContext, StorageContext>(options =>
                    options.UseSqlite("Data Source=ItomychStudioTaskDB.db"));
 
@@ -36,6 +37,7 @@ namespace ItomychStudioTask.API
             services.AddScoped(typeof(IBookValidationService), typeof(BookValidationService));
             services.AddScoped(typeof(IBookService), typeof(BookService));
             services.AddScoped(typeof(ICategoryService), typeof(CategoryService));
+             services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
