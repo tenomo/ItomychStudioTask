@@ -27,11 +27,13 @@ namespace ItomychStudioTask.API.Controllers
         }  
         
         // GET: api/Books/1/10
-        [HttpGet]
-        [HttpDelete("{page}/{rows}")]
-        public async Task<IActionResult> Get(int page, int rows)
+         
+        [HttpGet("{page}/{rows}")]
+        public async Task<IActionResult> Get(PaginationModel model)
         {
-            return Ok(await _bookService.GetAll(page,rows));
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Ok(await _bookService.GetAll(model.Page,model.Rows));
         }
 
         // GET: api/Books/5
@@ -44,12 +46,11 @@ namespace ItomychStudioTask.API.Controllers
         // POST: api/Books
         [HttpPost]
         [ValidateModel]
-        public async Task<IActionResult> Post([FromBody] Book book)
-        {
-            if (_bookService.BookValidationService.IsBookExists(book))
-                return Created(new Uri($"/Books/{book.Id}", UriKind.Relative), book);
+        public async Task<IActionResult> Post([FromBody] BookCreateModel book)
+        { 
             if (!_bookService.BookValidationService.IsBookBelongsToCategory(book))
-                return BadRequest($"Can not save book. Category by id {book.Id} was not found.");
+                return BadRequest($"Can not save book. Category by id {book.CategoryId} was not found.");
+
             await _bookService.Create(book);
             return Ok();
         }
@@ -67,6 +68,7 @@ namespace ItomychStudioTask.API.Controllers
                 return BadRequest($"Can not save. Category by id {book.Id} was not found.");
 
             await _bookService.Update(book);
+            return Ok();
         }
         
         // DELETE: api/ApiWithActions/5

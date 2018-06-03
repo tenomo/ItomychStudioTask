@@ -9,3 +9,11 @@ D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\It
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.AssemblyInfo.cs
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.dll
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\obj\Debug\netcoreapp2.0\ItomychStudioTask.API.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.pdb

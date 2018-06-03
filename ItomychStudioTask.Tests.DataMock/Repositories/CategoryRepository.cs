@@ -15,7 +15,7 @@ namespace ItomychStudioTask.Tests.DataMock.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Category>> GetAllAsync()
+        public Task<IEnumerable<Category>> GetAll()
         {
             throw new NotImplementedException();
         }
@@ -26,6 +26,11 @@ namespace ItomychStudioTask.Tests.DataMock.Repositories
         }
 
         public Task<IEnumerable<Category>> GetAll(int page, int rows)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Category> Get(long id)
         {
             throw new NotImplementedException();
         }

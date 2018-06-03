@@ -15,7 +15,7 @@ namespace ItomychStudioTask.Business.Services.Categories
 
        public Task<IEnumerable<Category>> GetAll()
         {
-           return _storage.CategoryRepository.GetAllAsync();
+           return _storage.CategoryRepository.GetAll();
         }
       public  Task<IEnumerable<Category>> GetAll(int page, int rows)
         {

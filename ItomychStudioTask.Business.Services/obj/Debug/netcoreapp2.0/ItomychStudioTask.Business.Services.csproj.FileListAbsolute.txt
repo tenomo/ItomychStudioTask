@@ -7,3 +7,7 @@ D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\ne
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.AssemblyInfo.cs
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.dll
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\obj\Debug\netcoreapp2.0\ItomychStudioTask.Business.Services.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.Business.Services\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb

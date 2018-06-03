@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ItomychStudioTask.Data.SqlLite.Repositories
 {
-    class CategoryRepository : ICategoryRepository
+   public class CategoryRepository : ICategoryRepository
     {
         private StorageContext storageContext;
         private DbSet<Category> categorySet;
@@ -21,7 +21,7 @@ namespace ItomychStudioTask.Data.SqlLite.Repositories
 
         public async Task<IEnumerable<Category>> GetAll(int page, int rows)
         {
-           return  await  categorySet.Skip(page*rows).Skip(rows).ToListAsync();
+           return  await  categorySet.Skip(page*rows).Take(rows).ToListAsync();
         }
 
         public async Task<IEnumerable<Category>> GetAll()

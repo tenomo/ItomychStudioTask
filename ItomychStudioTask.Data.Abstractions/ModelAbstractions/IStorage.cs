@@ -4,6 +4,6 @@
     {
         IBookRepository BookRepository { get;   }
         ICategoryRepository CategoryRepository { get;   }
-        void Save();
+       
     }
 }

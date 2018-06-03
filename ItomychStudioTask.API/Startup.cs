@@ -1,5 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ItomychStudioTask.Business.Services.Books;
+using ItomychStudioTask.Business.Services.Categories;
+using ItomychStudioTask.Data.Abstractions;
+using ItomychStudioTask.Data.Abstractions.ModelAbstractions;
+using ItomychStudioTask.Data.SqlLite;
+using ItomychStudioTask.Data.SqlLite.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +25,17 @@ namespace ItomychStudioTask.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //services.AddDbContext<IStorageContext, StorageContext>(  (provider, builder) => provider);
+            services.AddDbContext<IStorageContext, StorageContext>(options =>
+                   options.UseSqlite("Data Source=ItomychStudioTaskDB.db"));
+
+            services.AddScoped(typeof(IStorageContext), typeof(StorageContext));
+            services.AddScoped(typeof(IBookRepository), typeof(BookRepository));
+            services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
+            services.AddScoped(typeof(IStorage), typeof(Storage));
+            services.AddScoped(typeof(IBookValidationService), typeof(BookValidationService));
+            services.AddScoped(typeof(IBookService), typeof(BookService));
+            services.AddScoped(typeof(ICategoryService), typeof(CategoryService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

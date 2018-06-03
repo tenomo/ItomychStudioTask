@@ -21,7 +21,7 @@ namespace ItomychStudioTask.Business.Services.Books
 
         public bool IsBookBelongsToCategory(Book book)
         {
-            return (_storage.CategoryRepository.GetAllAsync().Result).Any(category => category.Id == book.CategoryId);
+            return (_storage.CategoryRepository.GetAll().Result).Any(category => category.Id == book.CategoryId);
         }
 
         public bool IsBookExists(long id)

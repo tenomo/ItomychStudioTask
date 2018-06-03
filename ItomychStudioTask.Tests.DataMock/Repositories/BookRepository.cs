@@ -34,7 +34,7 @@ namespace ItomychStudioTask.Tests.DataMock.Repositories
 
         public Task Create(Book item)
         {
-            
+            throw new NotImplementedException();
         }
 
         public Task Update(Book item)
@@ -48,6 +48,16 @@ namespace ItomychStudioTask.Tests.DataMock.Repositories
         }
 
        public Task<IEnumerable<Book>> GetAll(int page, int rows)
+       {
+           throw new NotImplementedException();
+       }
+
+       public Task<Book> Get(long id)
+       {
+           throw new NotImplementedException();
+       }
+
+       public Task Delete(long id)
        {
            throw new NotImplementedException();
        }

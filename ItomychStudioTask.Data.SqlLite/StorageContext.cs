@@ -5,18 +5,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ItomychStudioTask.Data.SqlLite
 {
-    class StorageContext : DbContext, IStorageContext
+   public class StorageContext : DbContext, IStorageContext
     {
-        private string connectionString;
+         private string connectionString;
 
-        public StorageContext(string connectionString)
+        public StorageContext(string connectionString = "Data Source=ItomychStudioTaskDB.db")
         {
             this.connectionString = connectionString;
         }
-    
+
         public DbSet<Book> Books { get; set; }
-        public DbSet<Category>  Categories { get; set; }
-    
+        public DbSet<Category> Categories { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -27,12 +27,12 @@ namespace ItomychStudioTask.Data.SqlLite
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Book>(etb =>
-            {
-                etb.HasKey(e => e.Id);
-                etb.Property(e => e.Id);
-             //   etb.ForSqliteToTable("Items");
-            }
+                {
+                    etb.HasKey(e => e.Id);
+                    etb.Property(e => e.Id); 
+                }
             );
         }
+    }
 }
-    ]
+    
