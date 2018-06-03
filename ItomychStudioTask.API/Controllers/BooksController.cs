@@ -46,7 +46,8 @@ namespace ItomychStudioTask.API.Controllers
         // POST: api/Books
         [HttpPost]
         [ValidateModel]
-        public async Task<IActionResult> Post([FromBody] BookCreateModel book)
+        public async Task<IActionResult> Post([FromBody] Book book)
+        //public async Task<IActionResult> Post([FromBody] BookCreateModel book)
         { 
             if (!_bookService.BookValidationService.IsBookBelongsToCategory(book))
                 return BadRequest($"Can not save book. Category by id {book.CategoryId} was not found.");

@@ -15,13 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItomychStudioTask.Data.Mode
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CEA87684-2A45-4921-A1BA-6C3D806D7230}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItomychStudioTask.Tests.DataMock", "ItomychStudioTask.Tests.DataMock\ItomychStudioTask.Tests.DataMock.csproj", "{D705DAF3-C72C-4473-8262-CB71D1E60C54}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItomychStudioTask.Tests", "ItomychStudioTask.Tests\ItomychStudioTask.Tests.csproj", "{C1E5CC8E-D676-4B82-BC83-9C608CED530B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItomychStudioTask.Business.Services", "ItomychStudioTask.Business.Services\ItomychStudioTask.Business.Services.csproj", "{F6EB5857-7A1B-4C77-BAC6-F3D39BF3891D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItomychStudioTask.Business.Services", "ItomychStudioTask.Business.Services\ItomychStudioTask.Business.Services.csproj", "{F6EB5857-7A1B-4C77-BAC6-F3D39BF3891D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItomychStudioTask.Data.SqlLite", "ItomychStudioTask.Data.SqlLite\ItomychStudioTask.Data.SqlLite.csproj", "{D6605B2A-59E4-4CF3-A07C-818DF9C5744A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItomychStudioTask.Data.SqlLite", "ItomychStudioTask.Data.SqlLite\ItomychStudioTask.Data.SqlLite.csproj", "{D6605B2A-59E4-4CF3-A07C-818DF9C5744A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,18 +67,6 @@ Global
 		{0CEDC4A5-7815-4A83-AFEF-9F8C07AE7828}.Release|x64.Build.0 = Release|Any CPU
 		{0CEDC4A5-7815-4A83-AFEF-9F8C07AE7828}.Release|x86.ActiveCfg = Release|Any CPU
 		{0CEDC4A5-7815-4A83-AFEF-9F8C07AE7828}.Release|x86.Build.0 = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|x64.Build.0 = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Debug|x86.Build.0 = Debug|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|x64.ActiveCfg = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|x64.Build.0 = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|x86.ActiveCfg = Release|Any CPU
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54}.Release|x86.Build.0 = Release|Any CPU
 		{C1E5CC8E-D676-4B82-BC83-9C608CED530B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C1E5CC8E-D676-4B82-BC83-9C608CED530B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1E5CC8E-D676-4B82-BC83-9C608CED530B}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -124,7 +110,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{39559220-CCB6-4A3D-A666-C4BF185CB4A1} = {B9219DD7-3736-40E2-A288-A7A1D2C4B446}
 		{0CEDC4A5-7815-4A83-AFEF-9F8C07AE7828} = {B9219DD7-3736-40E2-A288-A7A1D2C4B446}
-		{D705DAF3-C72C-4473-8262-CB71D1E60C54} = {CEA87684-2A45-4921-A1BA-6C3D806D7230}
 		{C1E5CC8E-D676-4B82-BC83-9C608CED530B} = {CEA87684-2A45-4921-A1BA-6C3D806D7230}
 		{F6EB5857-7A1B-4C77-BAC6-F3D39BF3891D} = {1B7E4496-0B75-492E-9519-A1E781BE5B9A}
 		{D6605B2A-59E4-4CF3-A07C-818DF9C5744A} = {B9219DD7-3736-40E2-A288-A7A1D2C4B446}
