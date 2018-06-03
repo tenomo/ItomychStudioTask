@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace ItomychStudioTask.API
 {
@@ -38,6 +40,12 @@ namespace ItomychStudioTask.API
             services.AddScoped(typeof(IBookService), typeof(BookService));
             services.AddScoped(typeof(ICategoryService), typeof(CategoryService));
              services.AddAutoMapper();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1",new Info{Title = "ItomychStudio Task: Books REST Service", Description= "A REST service that manages books collections." });
+                var xmlDocPath = $"{System.AppDomain.CurrentDomain.BaseDirectory}/Documentation.xml";
+                options.IncludeXmlComments(xmlDocPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +57,15 @@ namespace ItomychStudioTask.API
             }
 
             app.UseMvc();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            app.UseSwaggerUI(conf =>
+            {
+                conf.SwaggerEndpoint("/swagger/v1/swagger.json", "ItomychStudio Task: Books REST Service");
+            });
         }
     }
 }

@@ -37,7 +37,7 @@ namespace ItomychStudioTask.Tests.ControllerTests
 
             #endregion
 
-            var booksController = new BooksController(mockBookService.Object, null);
+            var booksController = new BooksController(mockBookService.Object, null, null);
             var result = await booksController.Get();
             Assert.NotNull(result);
             OkObjectResult okObjectResult = result as OkObjectResult;
@@ -77,7 +77,7 @@ namespace ItomychStudioTask.Tests.ControllerTests
 
             #endregion
 
-            var booksController = new BooksController(mockbookService.Object, null);
+            var booksController = new BooksController(mockbookService.Object, null, null);
             for (int page = 0; page < expectedPages; page++)
             {
 
@@ -87,14 +87,14 @@ namespace ItomychStudioTask.Tests.ControllerTests
                     Page = page + 1,
                     Rows = expectedRows
                 });
-                
-     
+
+
                 Assert.NotNull(result);
                 OkObjectResult okObjectResult = result as OkObjectResult;
                 Assert.NotNull(okObjectResult);
                 Assert.True(okObjectResult.StatusCode.HasValue);
-                Assert.Equal(200,okObjectResult.StatusCode.Value);
-                 var books = okObjectResult.Value as IEnumerable<Book>;
+                Assert.Equal(200, okObjectResult.StatusCode.Value);
+                var books = okObjectResult.Value as IEnumerable<Book>;
                 Assert.Equal(expectedRows, books.Count());
                 var expectedBooks = booksList.Skip(page * expectedRows).Take(expectedRows);
                 Assert.Equal(expectedBooks, books);
@@ -107,15 +107,13 @@ namespace ItomychStudioTask.Tests.ControllerTests
             #region mock
 
             var booksList = new List<Book>();
-           
-
             var mockBookService = new Mock<IBookService>();
-            mockBookService.Setup(repository => repository.GetAll()).ReturnsAsync(booksList);
+        
             mockBookService.Setup(repository => repository.Create(It.IsAny<Book>()))
-                .Callback((Book book) => booksList.Add(book));
-            mockBookService.Setup(service => service.BookValidationService )
- IMapper maper =  new Mapper(new MapperConfiguration(expression =>
-            expression.AddProfile(new DomainProfile())));
+            .Callback((Book book) => booksList.Add(book));
+
+            IMapper maper = new Mapper(new MapperConfiguration(expression =>
+                expression.AddProfile(new DomainProfile())));
 
             var categoriesList = new List<Category>()
             {
@@ -125,11 +123,19 @@ namespace ItomychStudioTask.Tests.ControllerTests
                     Title = Guid.NewGuid().ToString()
                 }
             };
+
+            var mockBookValidationService = new Mock<IBookValidationService>();
+           
+
+            mockBookValidationService.Setup(service => service.IsBookBelongsToCategory(It.IsAny<Book>())).Returns((Book model) =>
+            {
+                return categoriesList.Any(category => category.Id == model.CategoryId);
+            });
             #endregion
 
-            var booksController = new BooksController(mockBookService.Object, null);
+            var booksController = new BooksController(mockBookService.Object, maper, mockBookValidationService.Object);
 
-            // bookService.Create(new Book());
+           
             Assert.Empty(booksList);
             var result = await booksController.Post(new BookCreateModel()
             {
@@ -139,12 +145,23 @@ namespace ItomychStudioTask.Tests.ControllerTests
             });
 
             Assert.NotNull(result);
-            OkObjectResult okObjectResult = result as OkObjectResult;
-            Assert.NotNull(okObjectResult);
-            Assert.True(okObjectResult.StatusCode.HasValue);
-            Assert.Equal(200, okObjectResult.StatusCode.Value);
-            var books = okObjectResult.Value as IEnumerable<Book>;
-            Assert.Single(books);
+
+
+            var badRequestObjectResult = result as BadRequestObjectResult;
+            Assert.NotNull(badRequestObjectResult);
+
+
+              result = await booksController.Post(new BookCreateModel()
+            {
+                CategoryId = 1,
+                Title = Guid.NewGuid().ToString(),
+                Description = Guid.NewGuid().ToString()
+            });
+//            var okResult = result as OkResult;
+//            Assert.NotNull(okResult);
+           
+         
+            Assert.Single(booksList);
         }
     }
 }

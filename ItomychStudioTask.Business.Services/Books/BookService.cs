@@ -8,12 +8,11 @@ namespace ItomychStudioTask.Business.Services.Books
    public class BookService : IBookService
     {
         private readonly IStorage _storage;
-        private readonly IBookValidationService _bookValidationService;
-
-        public BookService(IStorage storage, IBookValidationService bookValidationService)
+ 
+        public BookService(IStorage storage )
        {
            _storage = storage;
-           _bookValidationService = bookValidationService;
+           
        }
 
        public Task<IEnumerable<Book>> GetAll()
@@ -43,6 +42,5 @@ namespace ItomychStudioTask.Business.Services.Books
             return _storage.BookRepository.GetAll(page,rows);
         }
 
-        public IBookValidationService BookValidationService => _bookValidationService;
-    }
+     }
 }

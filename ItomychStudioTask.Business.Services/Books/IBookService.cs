@@ -12,8 +12,7 @@ namespace ItomychStudioTask.Business.Services.Books
         Task<IEnumerable<Book>> GetAll();
         Task<IEnumerable<Book>> GetAll(int page, int rows);
         Task Update(Book book);
-        IBookValidationService BookValidationService{get;}
-
+ 
 
     }
 }

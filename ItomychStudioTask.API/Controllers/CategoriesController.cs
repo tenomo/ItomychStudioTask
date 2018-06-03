@@ -15,14 +15,21 @@ namespace ItomychStudioTask.API.Controllers
         {
             _categoryService = categoryService;
         }
-         
+         /// <summary>
+         /// Returns category collection.
+         /// </summary>
+         /// <returns></returns>
         [HttpGet]
         public async Task< IActionResult> Get()
         {
             return Ok(await _categoryService.GetAll());
         }
 
-     
+        /// <summary>
+        /// Returns category collection with pagination.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpGet("{page}/{rows}")]
         public async Task<IActionResult> Get(PaginationModel model)
         {

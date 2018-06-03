@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\Documentation.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -15,6 +19,7 @@
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +30,12 @@
     <ProjectReference Include="..\ItomychStudioTask.Business.Services\ItomychStudioTask.Business.Services.csproj" />
     <ProjectReference Include="..\ItomychStudioTask.Data.Models\ItomychStudioTask.Data.Models.csproj" />
     <ProjectReference Include="..\ItomychStudioTask.Data.SqlLite\ItomychStudioTask.Data.SqlLite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NSwag.AspNetCore.ActionFramework">
+      <HintPath>C:\Users\Tenomo\.nuget\packages\nswag.aspnetcore.actionframework\1.0.0\lib\netcoreapp1.1\NSwag.AspNetCore.ActionFramework.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

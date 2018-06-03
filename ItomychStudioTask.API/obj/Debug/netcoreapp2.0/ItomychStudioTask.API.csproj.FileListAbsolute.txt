@@ -17,3 +17,5 @@ D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\It
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Models.pdb
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.SqlLite.pdb
 D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\ItomychStudioTask.Data.Abstractions.pdb
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\NSwag.AspNetCore.ActionFramework.dll
+D:\ubnt_files\ItomychStudioTask\ItomychStudioTask.API\bin\Debug\netcoreapp2.0\Documentation.xml

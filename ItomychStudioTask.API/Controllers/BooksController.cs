@@ -8,20 +8,29 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ItomychStudioTask.API.Controllers
 {
+    /// <summary>
+    /// Books endpoint provides CRUD operations with books.
+    /// </summary>
     [Produces("application/json")]
     [Route("api/Books")]
     public class BooksController : Controller
     {
         private readonly IBookService _bookService;
         private readonly IMapper  _mapper;
+        private readonly IBookValidationService _bookValidationService;
 
-        public BooksController(IBookService bookService, IMapper mapper)
+        public BooksController(IBookService bookService, IMapper mapper, IBookValidationService bookValidationService)
         {
             _bookService = bookService;
             _mapper = mapper;
+            this._bookValidationService = bookValidationService;
         }
 
         // GET: api/Books
+        /// <summary>
+        /// Returns books collection.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -29,7 +38,11 @@ namespace ItomychStudioTask.API.Controllers
         }  
         
         // GET: api/Books/1/10
-         
+        /// <summary>
+        /// Returns books collection with pagination.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpGet("{page}/{rows}")]
         public async Task<IActionResult> Get(PaginationModel model)
         {
@@ -39,26 +52,40 @@ namespace ItomychStudioTask.API.Controllers
         }
 
         // GET: api/Books/5
+        /// <summary>
+        /// Returns a book by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _bookService.Get(id));
         }
-        
+
+        /// <summary>
+        /// Creates a new book. A book must has unique and belongs to some category. 
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         // POST: api/Books
         [HttpPost]
        [ValidateModel]
-         
+        
        public async Task<IActionResult> Post(  BookCreateModel book)
         { 
 
             var bookEntity = _mapper.Map<Book>(book);
-            if (!_bookService.BookValidationService.IsBookBelongsToCategory(bookEntity))
+            if (!_bookValidationService.IsBookBelongsToCategory(bookEntity))
                 return BadRequest($"Can not save book. Category by id {book.CategoryId} was not found.");
             await _bookService.Create(bookEntity);
             return Ok();
         }
-
+        /// <summary>
+        /// Updates a book. A book must and belongs to some category. 
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns></returns>
         // PUT: api/Books/5
         [HttpPut]
         [ValidateModel]
@@ -66,21 +93,25 @@ namespace ItomychStudioTask.API.Controllers
         {
             var bookEntity = _mapper.Map<Book>(book);
 
-            if (!_bookService.BookValidationService.IsBookExists(bookEntity))
+            if (!_bookValidationService.IsBookExists(bookEntity))
                 return NotFound("The book by id {book.Id} was not found.");
 
-            if (!_bookService.BookValidationService.IsBookBelongsToCategory(bookEntity))
+            if (!_bookValidationService.IsBookBelongsToCategory(bookEntity))
                 return BadRequest($"Can not save. Category by id {book.Id} was not found.");
 
             await _bookService.Update(bookEntity);
             return Ok();
         }
-        
+        /// <summary>
+        /// Deletes book by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (!_bookService.BookValidationService.IsBookExists(id))
+            if (!_bookValidationService.IsBookExists(id))
                 return NotFound("The book by id {book.Id} was not found.");
             await _bookService.Delete(id);
             return Ok();

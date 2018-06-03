@@ -32,7 +32,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
             var mockStorage = new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
                 .Returns(mockBookRepository.Object);
-            var bookService = new BookService(mockStorage.Object, null);
+            var bookService = new BookService(mockStorage.Object);
 
             #endregion
 
@@ -64,7 +64,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
                 .Returns(mockBookRepository.Object);
-            var bookService = new BookService(mockStorage.Object, null);
+            var bookService = new BookService(mockStorage.Object);
 
             #endregion
 
@@ -96,7 +96,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
                 .Returns(mockBookRepository.Object);
-            var bookService = new BookService(mockStorage.Object, null);
+            var bookService = new BookService(mockStorage.Object);
 
             #endregion
 
@@ -123,7 +123,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
                 .Returns(mockBookRepository.Object);
-            var bookService = new BookService(mockStorage.Object, null);
+            var bookService = new BookService(mockStorage.Object);
 
             #endregion
 
@@ -148,7 +148,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
                 new Mock<IStorage>();
             mockStorage.Setup(storage => storage.BookRepository)
                 .Returns(mockBookRepository.Object);
-            var bookService = new BookService(mockStorage.Object, null);
+            var bookService = new BookService(mockStorage.Object);
 
             #endregion
 
