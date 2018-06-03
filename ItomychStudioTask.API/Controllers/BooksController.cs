@@ -26,23 +26,27 @@ namespace ItomychStudioTask.API.Controllers
             this._bookValidationService = bookValidationService;
         }
 
-        // GET: api/Books
+       
         /// <summary>
         /// Returns books collection.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+
+        // GET: api/Books
         public async Task<IActionResult> Get()
         {
             return Ok( await _bookService.GetAll());
-        }  
-        
-        // GET: api/Books/1/10
+        }
+
+
         /// <summary>
         /// Returns books collection with pagination.
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+
+        // GET: api/Books/1/10
         [HttpGet("{page}/{rows}")]
         public async Task<IActionResult> Get(PaginationModel model)
         {
@@ -51,12 +55,14 @@ namespace ItomychStudioTask.API.Controllers
             return Ok(await _bookService.GetAll(model.Page,model.Rows));
         }
 
-        // GET: api/Books/5
+
         /// <summary>
         /// Returns a book by id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+
+        // GET: api/Books/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(int id)
         {
@@ -68,6 +74,7 @@ namespace ItomychStudioTask.API.Controllers
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
+        
         // POST: api/Books
         [HttpPost]
        [ValidateModel]
@@ -86,6 +93,7 @@ namespace ItomychStudioTask.API.Controllers
         /// </summary>
         /// <param name="book"></param>
         /// <returns></returns>
+       
         // PUT: api/Books/5
         [HttpPut]
         [ValidateModel]
@@ -107,6 +115,7 @@ namespace ItomychStudioTask.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

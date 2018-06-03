@@ -15,10 +15,12 @@ namespace ItomychStudioTask.API.Controllers
         {
             _categoryService = categoryService;
         }
-         /// <summary>
-         /// Returns category collection.
-         /// </summary>
-         /// <returns></returns>
+        /// <summary>
+        /// Returns category collection.
+        /// </summary>
+        /// <returns></returns>
+
+        // GET: api/Categories
         [HttpGet]
         public async Task< IActionResult> Get()
         {
@@ -30,6 +32,8 @@ namespace ItomychStudioTask.API.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+
+        // GET: api/Categories/1/1
         [HttpGet("{page}/{rows}")]
         public async Task<IActionResult> Get(PaginationModel model)
         {
