@@ -13,32 +13,31 @@ namespace ItomychStudioTask.Tests.ServiceTests
     {
         [Fact]
         public void TestGetAll()
-        { 
-                var categoriesList = new List<Category>();
-                int catsCount = 5;
-                for (int i = 0; i < catsCount; i++)
+        {
+            var categoriesList = new List<Category>();
+            int catsCount = 5;
+            for (int i = 0; i < catsCount; i++)
+            {
+                categoriesList.Add(new Category()
                 {
-                    categoriesList.Add(new Category()
-                    {
-                        Id = i,
-                        Title = Guid.NewGuid().ToString()
-                    });
-                }
-                var mockCategoryRepository = new Mock<ICategoryRepository>();
-                mockCategoryRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
-
-                var mockStorage =
-                    new Mock<IStorage>();
-                mockStorage.Setup(storage => storage.CategoryRepository)
-                        .Returns(mockCategoryRepository.Object);
-
-                var categoryService = new CategoryService(mockStorage.Object);
-
-               var cats = categoryService.GetAll().Result;
-      
-                Assert.Equal(catsCount,cats.Count());
+                    Id = i,
+                    Title = Guid.NewGuid().ToString()
+                });
             }
+            var mockCategoryRepository = new Mock<ICategoryRepository>();
+            mockCategoryRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
 
+            var mockStorage =
+                new Mock<IStorage>();
+            mockStorage.Setup(storage => storage.CategoryRepository)
+                .Returns(mockCategoryRepository.Object);
+
+            var categoryService = new CategoryService(mockStorage.Object);
+
+            var cats = categoryService.GetAll().Result;
+
+            Assert.Equal(catsCount, cats.Count());
+        }
 
         [Fact]
         public void TestGetAllWithPagination_without_page_normalisation()
@@ -56,8 +55,7 @@ namespace ItomychStudioTask.Tests.ServiceTests
                 });
             }
             var mockCategoryRepository = new Mock<ICategoryRepository>();
-            mockCategoryRepository.Setup(repository => repository.GetAll()).ReturnsAsync(categoriesList);
-            mockCategoryRepository.Setup(repository => repository.GetAll(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync((int page,int rows)=>categoriesList.Skip(page*rows).Take(rows));
+            mockCategoryRepository.Setup(repository => repository.GetAll(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync((int page, int rows) => categoriesList.Skip(page * rows).Take(rows));
 
             var mockStorage =
                 new Mock<IStorage>();
@@ -66,15 +64,11 @@ namespace ItomychStudioTask.Tests.ServiceTests
 
             var categoryService = new CategoryService(mockStorage.Object);
 
-            for (int i = 0; i < expectedPages ; i++)
+            for (int i = 0; i < expectedPages; i++)
             {
-                var cats = categoryService.GetAll(i,expectedRows).Result; 
-              Assert.Equal(expectedRows, cats.Count());
+                var cats = categoryService.GetAll(i, expectedRows).Result;
+                Assert.Equal(expectedRows, cats.Count());
             }
-
-            
-
-            
         }
     }
 }
