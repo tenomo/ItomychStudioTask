@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using AutoMapper;
 using ItomychStudioTask.API.Attributes;
 using ItomychStudioTask.API.Models;
+using ItomychStudioTask.API.Utils;
 using ItomychStudioTask.Business.Services.Books;
 using ItomychStudioTask.Data.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -48,11 +51,15 @@ namespace ItomychStudioTask.API.Controllers
 
         // GET: api/Books/1/10
         [HttpGet("{page}/{rows}")]
-        public async Task<IActionResult> Get(PaginationModel model)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            return Ok(await _bookService.GetAll(model.Page,model.Rows));
+ 
+          public async Task<IActionResult> Get(int page, int rows) { 
+  
+
+            if (!PaginationUtil.ValidatePagination(page,rows))
+                return BadRequest("Page and rows should be greater than 0");
+
+            page = PaginationUtil.GetNormalizedPage(page);
+            return Ok(await _bookService.GetAll(page, rows));
         }
 
 
@@ -125,5 +132,11 @@ namespace ItomychStudioTask.API.Controllers
             await _bookService.Delete(id);
             return Ok();
         }
+
+
+      
     }
+
+
+
 }

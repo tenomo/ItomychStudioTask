@@ -82,11 +82,7 @@ namespace ItomychStudioTask.Tests.ControllerTests
             {
 
 
-                var result = await booksController.Get(new PaginationModel()
-                {
-                    Page = page + 1,
-                    Rows = expectedRows
-                });
+                var result = await booksController.Get(page + 1, expectedRows);
 
 
                 Assert.NotNull(result);

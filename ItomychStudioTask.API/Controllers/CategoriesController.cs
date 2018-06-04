@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 using ItomychStudioTask.API.Models;
+using ItomychStudioTask.API.Utils;
 using ItomychStudioTask.Business.Services.Categories;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +18,7 @@ namespace ItomychStudioTask.API.Controllers
         {
             _categoryService = categoryService;
         }
+
         /// <summary>
         /// Returns category collection.
         /// </summary>
@@ -22,7 +26,7 @@ namespace ItomychStudioTask.API.Controllers
 
         // GET: api/Categories
         [HttpGet]
-        public async Task< IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             return Ok(await _categoryService.GetAll());
         }
@@ -35,11 +39,14 @@ namespace ItomychStudioTask.API.Controllers
 
         // GET: api/Categories/1/1
         [HttpGet("{page}/{rows}")]
-        public async Task<IActionResult> Get(PaginationModel model)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            return Ok(await _categoryService.GetAll(model.Page,model.Rows));
+
+        public async Task<IActionResult> Get(int page, int rows) { 
+            if (!PaginationUtil.ValidatePagination(page, rows))
+                return BadRequest("Page and rows should be greater than 0");
+
+            page = PaginationUtil.GetNormalizedPage(page);
+            
+            return Ok(await _categoryService.GetAll(page, rows));
         }
     }
 }

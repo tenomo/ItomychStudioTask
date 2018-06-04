@@ -84,11 +84,7 @@ namespace ItomychStudioTask.Tests.ControllerTests
             {
 
 
-                var result = await categoriesController.Get(new PaginationModel()
-                {
-                    Page = page + 1,
-                    Rows = expectedRows
-                });
+                var result = await categoriesController.Get(page + 1, expectedRows);
                 Assert.NotNull(result);
                 OkObjectResult okObjectResult = result as OkObjectResult;
                 Assert.True(okObjectResult.StatusCode.HasValue);
